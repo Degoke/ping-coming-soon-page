@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+
+$Blue: hsl(223, 87%, 63%);
+$PaleBlue: hsl(223, 100%, 88%);
+$LightRed: hsl(354, 100%, 66%);
+$Gray: hsl(0, 0%, 59%);
+$VeryDarkBlue: hsl(209, 33%, 12%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Libre Franklin", sans-serif;
+
+  .wrapper {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+
+    .logo {
+      margin-bottom: 1rem;
+      img {
+        transform: scale(0.7);
+      }
+    }
+    .info {
+      text-align: center;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+
+      h1 {
+        color: $VeryDarkBlue;
+        margin-bottom: 0.6rem;
+        span {
+          color: $Gray;
+        }
+      }
+
+      p {
+        font-size: 13px;
+        color: $VeryDarkBlue;
+      }
+    }
+
+    .notify {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0 0.5rem;
+      margin-bottom: 2.5rem;
+
+      .input {
+        #email {
+          width: 100%;
+          padding: 0.7rem 2rem;
+          border-radius: 30px;
+          outline: none;
+          margin-bottom: 0.3rem;
+          border: 0.2px solid $PaleBlue;
+          color: $VeryDarkBlue;
+
+          &::placeholder {
+            color: $PaleBlue;
+          }
+        }
+
+        p {
+          font-size: 11px;
+          margin: 0rem 0 1rem;
+          display: none;
+          color: $LightRed;
+          text-align: center;
+        }
+      }
+
+      #submit {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        border-radius: 30px;
+        outline: none;
+        background: $Blue;
+        color: white;
+        margin-top: 0.3rem;
+        border: none;
+        box-shadow: 0px 6px 5px 0px $PaleBlue;
+        font-weight: bold;
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .background {
+      margin-top: 2.5rem;
+      margin-bottom: 4rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .social {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+
+      .icon {
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        padding-top: 0.5rem;
+        border-radius: 50%;
+        color: $Blue;
+        border: 0.1px solid $PaleBlue;
+        margin-right: 0.5rem;
+
+        &:hover {
+          color: white;
+          background: $Blue;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .copy {
+    margin-bottom: 1rem;
+  }
+
+  .attribution {
+    color: $Gray;
+    margin-bottom: 1rem;
+  }
+}
+
+@media all and (min-width: 800px) {
+  body {
+    font-size: 20px;
+
+    .wrapper {
+      width: 50%;
+
+      .info {
+        h1 {
+          font-size: 50px;
+
+          span {
+            font-weight: 300;
+          }
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .notify {
+        flex-direction: row;
+        justify-content: center;
+
+        .input {
+          #email {
+            width: 28rem;
+            margin: 0;
+            font-size: 16px;
+            padding: 1rem 2rem;
+            margin-right: 1rem;
+          }
+
+          .error-text {
+            text-align: start;
+            padding-left: 2rem;
+            margin-top: 0.5rem;
+          }
+        }
+
+        #submit {
+          padding: 1rem 5rem;
+          margin: 0;
+        }
+      }
+
+      .social {
+        .icon {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+  }
+}
